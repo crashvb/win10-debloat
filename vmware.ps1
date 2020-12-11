@@ -35,7 +35,7 @@ $tweaks = @(
 	"DisableAdvertisingID",         # "EnableAdvertisingID",
 	"DisableCortana",               # "EnableCortana",
 	"DisableErrorReporting",        # "EnableErrorReporting",
-	"SetP2PUpdateLocal",            # "SetP2PUpdateInternet",
+	#"SetP2PUpdateLocal",           # "SetP2PUpdateInternet",
 	"DisableDiagTrack",             # "EnableDiagTrack",
 	"DisableWAPPush",               # "EnableWAPPush",
 
@@ -64,7 +64,7 @@ $tweaks = @(
 	"DisableUpdateMSRT",            # "EnableUpdateMSRT",
 	"DisableUpdateDriver",          # "EnableUpdateDriver",
 	"DisableUpdateRestart",         # "EnableUpdateRestart",
-	"DisableHomeGroups",            # "EnableHomeGroups",
+	#"DisableHomeGroups",           # "EnableHomeGroups",
 	"DisableSharedExperiences",     # "EnableSharedExperiences",
 	"DisableRemoteAssistance",      # "EnableRemoteAssistance",
 	"DisableRemoteDesktop",         # "EnableRemoteDesktop",
@@ -104,7 +104,7 @@ $tweaks = @(
 	#"AddENKeyboard",               # "RemoveENKeyboard",
 	"EnableNumlock",                # "DisableNumlock",
 	"EnableDarkMode",               # "DisableDarkMode",
-	"Stop-EdgePDF",
+	#"Stop-EdgePDF",
 
 	### Explorer UI Tweaks ###
 	"ShowKnownExtensions",          # "HideKnownExtensions",
@@ -112,7 +112,7 @@ $tweaks = @(
 	"HideSyncNotifications"         # "ShowSyncNotifications",
 	"ShowRecentShortcuts",          # "HideRecentShortcuts",
 	"SetExplorerThisPC",            # "SetExplorerQuickAccess",
-	"ShowThisPCFromDesktop",        # "HideThisPCOnDesktop",
+	"ShowThisPCOnDesktop",          # "HideThisPCOnDesktop",
 	#"ShowUserFolderOnDesktop",     # "HideUserFolderFromDesktop",
 	#"HideDesktopFromThisPC",       # "ShowDesktopInThisPC",
 	#"HideDesktopFromExplorer",     # "ShowDesktopInExplorer",
@@ -159,7 +159,7 @@ $tweaks = @(
 
 	### Unpinning ###
 	"UnpinStartMenuTiles",
-	"UnpinTaskbarIcons",
+	"UnpinTaskbarIcons"
 
 	### Auxiliary Functions ###
 )
