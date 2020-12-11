@@ -10,42 +10,20 @@
 #
 #     > powershell -nop -c "iex(New-Object Net.WebClient).DownloadString('https://git.io/JJ8R4')"
 #
-#	Chris Titus Tech Additions:
-#
-#	- Dark Mode
-#	- One Command to launch and run
-#	- Chocolatey Install
-#	- O&O Shutup10 CFG and Run
-#	- Added Install Programs
-#	- Added Debloat Microsoft Store Apps
-#	- Added Confirm Menu for Adobe and Brave Browser
-#	- Changed Default Apps to Notepad++, Brave, Irfanview, and more using XML Import feature
-#
 ##########
-# Default preset
+#
 $tweaks = @(
 	### Require administrator privileges ###
 	"RequireAdmin",
-	"CreateRestorePoint",
+	#"CreateRestorePoint",
 	
-	### Chris Titus Tech Additions
-	"TitusRegistryTweaks",
-	"InstallTitusProgs", #REQUIRED FOR OTHER PROGRAM INSTALLS!
-	"Install7Zip",
-	"InstallNotepadplusplus",
-	"InstallIrfanview",
-	"InstallVLC",
-	"InstallAdobe",
-	"InstallBrave",
-	"ChangeDefaultApps",
-
 	### Windows Apps
 	"DebloatAll",
 
 	### Privacy Tweaks ###
 	"DisableTelemetry",             # "EnableTelemetry",
 	"DisableWiFiSense",             # "EnableWiFiSense",
-	"DisableSmartScreen",         # "EnableSmartScreen",
+	"DisableSmartScreen",           # "EnableSmartScreen",
 	"DisableWebSearch",             # "EnableWebSearch",
 	"DisableAppSuggestions",        # "EnableAppSuggestions",
 	"DisableActivityHistory",       # "EnableActivityHistory",
@@ -57,131 +35,131 @@ $tweaks = @(
 	"DisableAdvertisingID",         # "EnableAdvertisingID",
 	"DisableCortana",               # "EnableCortana",
 	"DisableErrorReporting",        # "EnableErrorReporting",
-	"SetP2PUpdateLocal",          # "SetP2PUpdateInternet",
+	"SetP2PUpdateLocal",            # "SetP2PUpdateInternet",
 	"DisableDiagTrack",             # "EnableDiagTrack",
 	"DisableWAPPush",               # "EnableWAPPush",
 
 	### Security Tweaks ###
-	"SetUACLow",                  # "SetUACHigh",
-	# "EnableSharingMappedDrives",  # "DisableSharingMappedDrives",
-	# "DisableAdminShares",           # "EnableAdminShares",
-	"DisableSMB1",                # "EnableSMB1",
-	# "DisableSMBServer",           # "EnableSMBServer",
-	# "DisableLLMNR",               # "EnableLLMNR",
+	"SetUACHigh",                   # "SetUACLow",
+	"DisableSharingMappedDrives",   # "EnableSharingMappedDrives",
+	#"DisableAdminShares",          # "EnableAdminShares",
+	#"DisableSMB1",                 # "EnableSMB1",
+	"DisableSMBServer",             # "EnableSMBServer",
+	#"DisableLLMNR",                # "EnableLLMNR",
 	"SetCurrentNetworkPrivate",     # "SetCurrentNetworkPublic",
-	"SetUnknownNetworksPrivate",  # "SetUnknownNetworksPublic",
-	"DisableNetDevicesAutoInst",  # "EnableNetDevicesAutoInst",
+	"SetUnknownNetworksPrivate",    # "SetUnknownNetworksPublic",
+	"DisableNetDevicesAutoInst",    # "EnableNetDevicesAutoInst",
 	"DisableCtrldFolderAccess",	# "EnableCtrldFolderAccess",
 	"EnableFirewall",
 	"EnableDefender",
 	"EnableDefenderCloud",
-	"EnableF8BootMenu",             # "DisableF8BootMenu",
-	#"SetDEPOptOut",                 # "SetDEPOptIn",
-	# "EnableCIMemoryIntegrity",    # "DisableCIMemoryIntegrity",
-	#"DisableScriptHost",            # "EnableScriptHost",
-	#"EnableDotNetStrongCrypto",     # "DisableDotNetStrongCrypto",
-	"DisableMeltdownCompatFlag", # "EnableMeltdownCompatFlag"    
+	"DisableF8BootMenu",            # "EnableF8BootMenu",
+	#"SetDEPOptOut",                # "SetDEPOptIn",
+	#"EnableCIMemoryIntegrity",     # "DisableCIMemoryIntegrity",
+	#"DisableScriptHost",           # "EnableScriptHost",
+	"EnableDotNetStrongCrypto",     # "DisableDotNetStrongCrypto",
+	"DisableMeltdownCompatFlag",    # "EnableMeltdownCompatFlag"    
 
 	### Service Tweaks ###
-	"DisableUpdateMSRT",          # "EnableUpdateMSRT",
-	"DisableUpdateDriver",        # "EnableUpdateDriver",
+	"DisableUpdateMSRT",            # "EnableUpdateMSRT",
+	"DisableUpdateDriver",          # "EnableUpdateDriver",
 	"DisableUpdateRestart",         # "EnableUpdateRestart",
-	"DisableHomeGroups",          # "EnableHomeGroups",
+	"DisableHomeGroups",            # "EnableHomeGroups",
 	"DisableSharedExperiences",     # "EnableSharedExperiences",
 	"DisableRemoteAssistance",      # "EnableRemoteAssistance",
-	"EnableRemoteDesktop",          # "DisableRemoteDesktop",
+	"DisableRemoteDesktop",         # "EnableRemoteDesktop",
 	"DisableAutoplay",              # "EnableAutoplay",
 	"DisableAutorun",               # "EnableAutorun",
-	"DisableStorageSense",        # "EnableStorageSense",
-	"DisableDefragmentation",     # "EnableDefragmentation",
-	"DisableSuperfetch",          # "EnableSuperfetch",
+	"DisableStorageSense",          # "EnableStorageSense",
+	"DisableDefragmentation",       # "EnableDefragmentation",
+	"DisableSuperfetch",            # "EnableSuperfetch",
 	"EnableIndexing",
-	"SetBIOSTimeUTC",             # "SetBIOSTimeLocal",
-	"DisableHibernation",		# "EnableHibernation",          # 
-	"EnableSleepButton",		# "DisableSleepButton",         
-	"DisableSleepTimeout",        # "EnableSleepTimeout",
-	# "DisableFastStartup",         # "EnableFastStartup",
+	"SetBIOSTimeUTC",               # "SetBIOSTimeLocal",
+	"DisableHibernation",           # "EnableHibernation",
+	"DisableSleepButton",           # "EnableSleepButton",         
+	"DisableSleepTimeout",          # "EnableSleepTimeout",
+	#"DisableFastStartup",          # "EnableFastStartup",
 
 	### UI Tweaks ###
 	"DisableActionCenter",          # "EnableActionCenter",
-	"EnableLockScreen",				# "DisableLockScreen",
-	"EnableLockScreenRS1",			# "DisableLockScreenRS1",
-	# "HideNetworkFromLockScreen",    # "ShowNetworkOnLockScreen",
-	# "HideShutdownFromLockScreen",   # "ShowShutdownOnLockScreen",
+	"EnableLockScreen",             # "DisableLockScreen",
+	"EnableLockScreenRS1",          # "DisableLockScreenRS1",
+	#"HideNetworkFromLockScreen",   # "ShowNetworkOnLockScreen",
+	#"HideShutdownFromLockScreen",  # "ShowShutdownOnLockScreen",
 	"DisableStickyKeys",            # "EnableStickyKeys",
 	"ShowTaskManagerDetails"        # "HideTaskManagerDetails",
 	"ShowFileOperationsDetails",    # "HideFileOperationsDetails",
-	"DisableFileDeleteConfirm",	# "EnableFileDeleteConfirm",    
+	#"DisableFileDeleteConfirm",    # "EnableFileDeleteConfirm",    
 	"HideTaskbarSearch",
-	#"ShowTaskbarSearchIcon",      # "ShowTaskbarSearchBox",
+	#"ShowTaskbarSearchIcon",       # "ShowTaskbarSearchBox",
 	"HideTaskView",                 # "ShowTaskView",
-	# "ShowSmallTaskbarIcons",        # "ShowLargeTaskbarIcons",
-	# "SetTaskbarCombineWhenFull",    # "SetTaskbarCombineNever",     # "SetTaskbarCombineAlways",
+	"ShowSmallTaskbarIcons",        # "ShowLargeTaskbarIcons",
+	"SetTaskbarCombineNever",       # "SetTaskbarCombineWhenFull", # "SetTaskbarCombineNever", # "SetTaskbarCombineAlways",
 	"HideTaskbarPeopleIcon",        # "ShowTaskbarPeopleIcon",
 	"ShowTrayIcons",                # "HideTrayIcons",
 	"DisableSearchAppInStore",      # "EnableSearchAppInStore",
 	"DisableNewAppPrompt",          # "EnableNewAppPrompt",
-	# "SetControlPanelSmallIcons",  # "SetControlPanelLargeIcons",  # "SetControlPanelCategories",
-	# "SetVisualFXPerformance",     # "SetVisualFXAppearance",
-	# "AddENKeyboard",              # "RemoveENKeyboard",
-	"EnableNumlock",             	# "DisableNumlock",
-	"EnableDarkMode",				# "DisableDarkMode",
+	"SetControlPanelSmallIcons",    # "SetControlPanelLargeIcons",  # "SetControlPanelCategories",
+	"SetVisualFXPerformance",       # "SetVisualFXAppearance",
+	#"AddENKeyboard",               # "RemoveENKeyboard",
+	"EnableNumlock",                # "DisableNumlock",
+	"EnableDarkMode",               # "DisableDarkMode",
 	"Stop-EdgePDF",
 
 	### Explorer UI Tweaks ###
 	"ShowKnownExtensions",          # "HideKnownExtensions",
-	"HideHiddenFiles",
+	#"HideHiddenFiles",
 	"HideSyncNotifications"         # "ShowSyncNotifications",
-	"HideRecentShortcuts",          # "ShowRecentShortcuts",
+	"ShowRecentShortcuts",          # "HideRecentShortcuts",
 	"SetExplorerThisPC",            # "SetExplorerQuickAccess",
-	"HideThisPCFromDesktop",	# "ShowThisPCOnDesktop",
-	# "ShowUserFolderOnDesktop",    # "HideUserFolderFromDesktop",
-	# "HideDesktopFromThisPC",        # "ShowDesktopInThisPC",
-	# "HideDesktopFromExplorer",    # "ShowDesktopInExplorer",
-	# "HideDocumentsFromThisPC",      # "ShowDocumentsInThisPC",
-	# "HideDocumentsFromExplorer",  # "ShowDocumentsInExplorer",
-	# "HideDownloadsFromThisPC",      # "ShowDownloadsInThisPC",
-	# "HideDownloadsFromExplorer",  # "ShowDownloadsInExplorer",
+	"ShowThisPCFromDesktop",        # "HideThisPCOnDesktop",
+	#"ShowUserFolderOnDesktop",     # "HideUserFolderFromDesktop",
+	#"HideDesktopFromThisPC",       # "ShowDesktopInThisPC",
+	#"HideDesktopFromExplorer",     # "ShowDesktopInExplorer",
+	#"HideDocumentsFromThisPC",     # "ShowDocumentsInThisPC",
+	#"HideDocumentsFromExplorer",   # "ShowDocumentsInExplorer",
+	#"HideDownloadsFromThisPC",     # "ShowDownloadsInThisPC",
+	#"HideDownloadsFromExplorer",   # "ShowDownloadsInExplorer",
 	"HideMusicFromThisPC",          # "ShowMusicInThisPC",
-	"HideMusicFromExplorer",      # "ShowMusicInExplorer",
-	# "HidePicturesFromThisPC",       # "ShowPicturesInThisPC",
-	# "HidePicturesFromExplorer",   # "ShowPicturesInExplorer",
+	"HideMusicFromExplorer",        # "ShowMusicInExplorer",
+	"HidePicturesFromThisPC",       # "ShowPicturesInThisPC",
+	"HidePicturesFromExplorer",     # "ShowPicturesInExplorer",
 	"HideVideosFromThisPC",         # "ShowVideosInThisPC",
-	"HideVideosFromExplorer",     # "ShowVideosInExplorer",
+	"HideVideosFromExplorer",       # "ShowVideosInExplorer",
 	"Hide3DObjectsFromThisPC",      # "Show3DObjectsInThisPC",
-	"Hide3DObjectsFromExplorer",  # "Show3DObjectsInExplorer",
-	# "DisableThumbnails",          # "EnableThumbnails",
-	# "DisableThumbsDB",              # "EnableThumbsDB",
+	"Hide3DObjectsFromExplorer",    # "Show3DObjectsInExplorer",
+	"DisableThumbnails",            # "EnableThumbnails",
+	"DisableThumbsDB",              # "EnableThumbsDB",
 
 	### Application Tweaks ###
-    # "EnableOneDrive",
+	"DisableOneDrive",              # "EnableOneDrive",
 	"UninstallMsftBloat",           # "InstallMsftBloat",
 	"UninstallThirdPartyBloat",     # "InstallThirdPartyBloat",
-	# "UninstallWindowsStore",      # "InstallWindowsStore",
-	# "DisableXboxFeatures",          # "EnableXboxFeatures",
+	"UninstallWindowsStore",        # "InstallWindowsStore",
+	"DisableXboxFeatures",          # "EnableXboxFeatures",
 	"DisableAdobeFlash",            # "EnableAdobeFlash",
-	"InstallMediaPlayer", 		# "UninstallMediaPlayer",
-	"UninstallInternetExplorer",  # "InstallInternetExplorer",
-	"UninstallWorkFolders",       # "InstallWorkFolders",
-	"InstallLinuxSubsystem",      # "UninstallLinuxSubsystem",
-	# "InstallHyperV",              # "UninstallHyperV",
-	"SetPhotoViewerAssociation",    # "UnsetPhotoViewerAssociation",
-	"AddPhotoViewerOpenWith",       # "RemovePhotoViewerOpenWith",
-	"InstallPDFPrinter"		# "UninstallPDFPrinter",
-	# "UninstallXPSPrinter",          # "InstallXPSPrinter",
-	# "RemoveFaxPrinter",             # "AddFaxPrinter",
+	"UninstallMediaPlayer",         # "InstallMediaPlayer",
+	"UninstallInternetExplorer",    # "InstallInternetExplorer",
+	"UninstallWorkFolders",         # "InstallWorkFolders",
+	#"InstallLinuxSubsystem",       # "UninstallLinuxSubsystem",
+	#"InstallHyperV",               # "UninstallHyperV",
+	#"SetPhotoViewerAssociation",   # "UnsetPhotoViewerAssociation",
+	#"AddPhotoViewerOpenWith",      # "RemovePhotoViewerOpenWith",
+	"InstallPDFPrinter"             # "UninstallPDFPrinter",
+	"UninstallXPSPrinter",          # "InstallXPSPrinter",
+	"RemoveFaxPrinter",             # "AddFaxPrinter",
 
 	### Server Specific Tweaks ###
-	# "HideServerManagerOnLogin",   # "ShowServerManagerOnLogin",
-	# "DisableShutdownTracker",     # "EnableShutdownTracker",
-	# "DisablePasswordPolicy",      # "EnablePasswordPolicy",
-	# "DisableCtrlAltDelLogin",     # "EnableCtrlAltDelLogin",
-	# "DisableIEEnhancedSecurity",  # "EnableIEEnhancedSecurity",
-	# "EnableAudio",                # "DisableAudio",
+	#"HideServerManagerOnLogin",    # "ShowServerManagerOnLogin",
+	#"DisableShutdownTracker",      # "EnableShutdownTracker",
+	#"DisablePasswordPolicy",       # "EnablePasswordPolicy",
+	"EnableCtrlAltDelLogin",        # "DisableCtrlAltDelLogin",
+	#"DisableIEEnhancedSecurity",   # "EnableIEEnhancedSecurity",
+	#"EnableAudio",                 # "DisableAudio",
 
 	### Unpinning ###
-	#"UnpinStartMenuTiles",
-	#"UnpinTaskbarIcons",
+	"UnpinStartMenuTiles",
+	"UnpinTaskbarIcons",
 
 	### Auxiliary Functions ###
 )
@@ -189,35 +167,6 @@ $tweaks = @(
 #########
 # Recommended Titus Customizations
 #########
-
-function Show-Choco-Menu {
-    param(
-        [Parameter(Mandatory)]
-        [ValidateNotNullOrEmpty()]
-        [string]$Title,
-    
-        [Parameter(Mandatory)]
-        [ValidateNotNullOrEmpty()]
-        [string]$ChocoInstall
-    )
-   
- do
- {
-    Clear-Host
-    Write-Host "================ $Title ================"
-    Write-Host "Y: Press 'Y' to do this."
-    Write-Host "2: Press 'N' to skip this."
-	Write-Host "Q: Press 'Q' to stop the entire script."
-    $selection = Read-Host "Please make a selection"
-    switch ($selection)
-    {
-    'y' { choco install $ChocoInstall -y }
-    'n' { Break }
-    'q' { Exit  }
-    }
- }
- until ($selection -match "y" -or $selection -match "n" -or $selection -match "q")
-}
 
 Function TitusRegistryTweaks {
 	Write-Output "Improving Windows Update to delay Feature updates and only install Security Updates"
@@ -233,64 +182,6 @@ Function TitusRegistryTweaks {
 	Set-ItemProperty -Path $UpdatesPath -Name "ActiveHoursEnd" -Type DWord -Value 2
 	If (!(Get-ItemProperty $UpdatesPath  DeferQualityUpdatesPeriodInDays)) { New-ItemProperty -Path $UpdatesPath -Name "ActiveHoursStart" -Type DWord -Value 8 }
 	Set-ItemProperty -Path $UpdatesPath -Name "ActiveHoursStart" -Type DWord -Value 8
-}
-Function InstallTitusProgs {
-	Write-Output "Installing Chocolatey"
-	Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-	choco install chocolatey-core.extension -y
-	Write-Output "Running O&O Shutup with Recommended Settings"
-	Import-Module BitsTransfer
-	Start-BitsTransfer -Source "https://raw.githubusercontent.com/ChrisTitusTech/win10script/master/ooshutup10.cfg" -Destination ooshutup10.cfg
-	Start-BitsTransfer -Source "https://dl5.oo-software.com/files/ooshutup10/OOSU10.exe" -Destination OOSU10.exe
-	./OOSU10.exe ooshutup10.cfg /quiet
-}
-
-Function InstallAdobe {
-	Show-Choco-Menu -Title "Do you want to install Adobe Acrobat Reader?" -ChocoInstall "adobereader"
-}
-
-Function InstallBrave {
-	do
- {
-    Clear-Host
-    Write-Host "================ Do You Want to Install Brave Browser? ================"
-    Write-Host "Y: Press 'Y' to do this."
-    Write-Host "2: Press 'N' to skip this."
-	Write-Host "Q: Press 'Q' to stop the entire script."
-    $selection = Read-Host "Please make a selection"
-    switch ($selection)
-    {
-    'y' { 
-		Invoke-WebRequest -Uri "https://laptop-updates.brave.com/download/CHR253" -OutFile $env:USERPROFILE\Downloads\brave.exe
-		~/Downloads/brave.exe
-	}
-    'n' { Break }
-    'q' { Exit  }
-    }
- }
- until ($selection -match "y" -or $selection -match "n" -or $selection -match "q")
-	
-}
-Function Install7Zip {
-	Show-Choco-Menu -Title "Do you want to install 7-Zip?" -ChocoInstall "7zip"
-}
-
-Function InstallNotepadplusplus {
-	Show-Choco-Menu -Title "Do you want to install Notepad++?" -ChocoInstall "notepadplusplus"
-}
-
-Function InstallVLC {
-	Show-Choco-Menu -Title "Do you want to install VLC?" -ChocoInstall "vlc"
-}
-
-Function InstallIrfanview {
-	Show-Choco-Menu -Title "Do you want to install Irfanview?" -ChocoInstall "irfanview"
-}
-
-Function ChangeDefaultApps {
-	Write-Output "Setting Default Programs - Notepad++ Brave VLC IrFanView"
-	Start-BitsTransfer -Source "https://raw.githubusercontent.com/ChrisTitusTech/win10script/master/MyDefaultAppAssociations.xml" -Destination $HOME\Desktop\MyDefaultAppAssociations.xml
-	dism /online /Import-DefaultAppAssociations:"%UserProfile%\Desktop\MyDefaultAppAssociations.xml"
 }
 
 ##########
